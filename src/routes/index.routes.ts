@@ -3,7 +3,11 @@ import { Router } from 'express'
 const router = Router()
 
 router.get('/', (req, res) => {
-  res.json({ message: 'Hello World' })
+  res.render('index')
+})
+
+router.get('/edit', (req, res) => {
+  res.render('edit')
 })
 
 export default router
