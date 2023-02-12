@@ -9,9 +9,9 @@ app.set('views', path.join(__dirname, 'views'))
 app.engine(
   'hbs',
   engine({
-    extname: '.hbs',
+    extname: 'hbs',
     layoutsDir: path.join(app.get('views'), 'layouts'),
-    defaultLayout: 'main',
+    defaultLayout: false,
     partialsDir: path.join(app.get('views'), 'partials')
   })
 )
