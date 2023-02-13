@@ -19,6 +19,11 @@ router.post('/edit/:id', async (req, res) => {
   res.redirect('/')
 })
 
+router.get('/delete/:id', async (req, res) => {
+  await CustomerModel.findByIdAndDelete(req.params.id);
+  res.redirect('/')
+})
+
 router.post('/customers/add', async (req, res) => {
   const { name, email } = req.body
   const exists = await CustomerModel.findOne({ email })

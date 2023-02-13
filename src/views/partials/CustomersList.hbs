@@ -13,8 +13,8 @@
       <tr>
         <td>{{this.name}}</td>
         <td>{{this.email}}</td>
-        <td><a href='/edit/{{ this._id }}' class="btn btn-primary">Edit</a></td>
-        <td><a href="/delete" class="btn btn-danger">Delete</a></td>
+        <td><a href='/edit/{{this._id}}' class="btn btn-primary">Edit</a></td>
+        <td><a href="/delete/{{this._id}}" class="btn btn-danger">Delete</a></td>
       </tr>
       {{/each}}
   </table>
