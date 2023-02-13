@@ -11,11 +11,12 @@ app.engine(
   engine({
     extname: 'hbs',
     layoutsDir: path.join(app.get('views'), 'layouts'),
-    defaultLayout: false,
+    defaultLayout: 'main',
     partialsDir: path.join(app.get('views'), 'partials')
   })
 )
 app.set('view engine', 'hbs')
+app.use(express.urlencoded({ extended: false })) // to parse form data
 app.use(indexRoutes)
 
 export default app
