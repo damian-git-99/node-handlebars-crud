@@ -2,6 +2,7 @@ import express from 'express'
 import 'express-async-errors'
 import cookieSession from 'cookie-session'
 import indexRoutes from './routes/index.routes'
+import authRoutes from './routes/auth.routes'
 import { engine } from 'express-handlebars'
 import path from 'path'
 import { requireAuth } from './middlewares/require-auth'
@@ -29,7 +30,8 @@ app.use(
   })
 )
 
-app.use(indexRoutes)
+app.use(authRoutes)
+app.use(requireAuth, indexRoutes)
 app.use(errorHandler)
 
 export default app
