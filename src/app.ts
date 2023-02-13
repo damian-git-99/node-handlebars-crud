@@ -1,7 +1,11 @@
 import express from 'express'
+import 'express-async-errors'
+import cookieSession from 'cookie-session'
 import indexRoutes from './routes/index.routes'
 import { engine } from 'express-handlebars'
 import path from 'path'
+import { requireAuth } from './middlewares/require-auth'
+import { errorHandler } from './middlewares/error-handler'
 
 const app = express()
 // we need absolute paths for views
@@ -17,6 +21,15 @@ app.engine(
 )
 app.set('view engine', 'hbs')
 app.use(express.urlencoded({ extended: false })) // to parse form data
+
+app.use(
+  cookieSession({
+    name: 'session',
+    signed: false, // disable encryption
+  })
+)
+
 app.use(indexRoutes)
+app.use(errorHandler)
 
 export default app

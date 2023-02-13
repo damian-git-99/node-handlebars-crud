@@ -1,32 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body style="background-color: f2f2f2;">
-  <div class="container mt-3">
-    <div class="row justify-content-center">
-      <div class="col-5">
-        <form action='/edit/{{customer._id}}' method='post'>
-          <input
-            class='form-control mb-1'
-            type='text'
-            name='name'
-            value="{{customer.name}}"
-          />
-          <input
-            class='form-control mb-1'
-            type='text'
-            name='email'
-             value="{{customer.email}}"
-          />
-          <input class='btn btn-outline-dark' type='submit' value='Update User' />
-        </form>
-      </div>
+<div class='container mt-3'>
+  <div class='row justify-content-center'>
+    <div class='col-5'>
+      <form action='/edit/{{customer._id}}' method='post'>
+        <input
+          class='form-control mb-1'
+          type='text'
+          name='name'
+          value='{{customer.name}}'
+        />
+        <input
+          class='form-control mb-1'
+          type='text'
+          name='email'
+          value='{{customer.email}}'
+        />
+        <input class='btn btn-outline-dark' type='submit' value='Update User' />
+      </form>
     </div>
   </div>
-</body>
-</html>
+</div>
