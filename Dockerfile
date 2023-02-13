@@ -7,7 +7,6 @@ FROM node:19-alpine3.15 as builder
 WORKDIR /app
 COPY --from=dev-deps /app/node_modules ./node_modules
 COPY . .
-# RUN yarn test
 RUN npm run build
 
 FROM node:19-alpine3.15 as prod
