@@ -10,34 +10,10 @@
   <div class="container mt-3">
     <div class="row">
       <div class="col-5">
-        <form action="/customers/add" method="post">
-          <input class="form-control mb-1" type="text" name="name" placeholder="Name...">
-          <input class="form-control mb-1" type="text" name="email" placeholder="Email...">
-          <input class="btn btn-outline-dark" type="submit" value="Add User">
-        </form>
+        {{> CustomerForm }}
       </div>
       <div class="col-7">
-        <div class="table-responsive">
-          <table class="table table-hover table-striped table-responsive">
-            <thead>
-              <tr>
-                <th scope="col">Name</th>
-                <th scope="col">Email</th>
-                <th scope="col">Edit</th>
-                <th scope="col">Delete</th>
-              </tr>
-            </thead>
-            <tbody>
-              {{#each customers}}
-              <tr>
-                <td>{{this.name}}</td>
-                <td>{{this.email}}</td>
-                <td><button class="btn btn-primary">Edit</button></td>
-                 <td><button class="btn btn-danger">Delete</button></td>
-              </tr>
-              {{/each}}
-          </table>
-        </div>
+        {{> CustomersList}}
       </div>
     </div>
   </div>
