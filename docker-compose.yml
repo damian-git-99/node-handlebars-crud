@@ -2,7 +2,8 @@ version: '3.7'
 services:
   app:
     container_name: app-container
-    build: .
+    # build: .
+    image: damiangalvan/handlebars-app
     ports:
       - 3000:3000
     depends_on:
